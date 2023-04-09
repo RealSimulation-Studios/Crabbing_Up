@@ -8,7 +8,6 @@ public class GameLoader : MonoBehaviour
 {
     public string saveDirectory = "Saves";
     public string saveName = "savedGame";
-    public GameObject data;
 
     public void LoadFromFile()
     {

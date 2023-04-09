@@ -14,5 +14,13 @@ public class player_data : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+
+        GameObject.Find("save/load").GetComponent<GameLoader>().LoadFromFile();
+    }
+
+    public void Exit()
+    {
+        GameObject.Find("save/load").GetComponent<SaveGame>().SaveToFile();
+        Application.Quit();
     }
 }
