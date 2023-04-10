@@ -22,6 +22,7 @@ public class GameLoader : MonoBehaviour
 
         GameObject.Find("data").GetComponent<player_data>().Username = loadData.playerName;
         GameObject.Find("data").GetComponent<player_data>().level = loadData.level;
+        GameObject.Find("data").GetComponent<player_data>().health = loadData.health;
         
 
         saveFile.Close();
