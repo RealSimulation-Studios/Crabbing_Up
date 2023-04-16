@@ -12,6 +12,7 @@ public class SaveGame : MonoBehaviour
 
     public void SaveToFile()
     {
+        saveName = PlayerPrefs.GetString("savegame");
 
         saveGameData.playerName = GameObject.Find("data").GetComponent<player_data>().Username;
         saveGameData.level = GameObject.Find("data").GetComponent<player_data>().level;
@@ -21,14 +22,11 @@ public class SaveGame : MonoBehaviour
         BinaryFormatter formatter = new BinaryFormatter();
 
         // Choose the save location
-        FileStream saveFile = File.Create(Application.persistentDataPath + "/" + saveName + ".crab");
+        FileStream saveFile = File.Create(Application.persistentDataPath + "/Saves/" + saveName + ".crab");
 
         // Write our C# Unity game data type to a binary file
         formatter.Serialize(saveFile, saveGameData);
 
         saveFile.Close();
-
-        // Success message
-        print("Game Saved to " + Directory.GetCurrentDirectory().ToString() + "/Saves/" + saveName + ".crab");
     }
 }

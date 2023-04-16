@@ -6,16 +6,17 @@ using UnityEngine;
 
 public class GameLoader : MonoBehaviour
 {
-    public string saveDirectory = "Saves";
     public string saveName = "savedGame";
 
     public void LoadFromFile()
-    {
+    {   
+        saveName = PlayerPrefs.GetString("savegame");
+        
         // Converts binary file back into readable data for Unity game
         BinaryFormatter formatter = new BinaryFormatter();
 
         // Choosing the saved file to open
-        FileStream saveFile = File.Open(Application.persistentDataPath + "/" + saveName + ".crab", FileMode.Open);
+        FileStream saveFile = File.Open(Application.persistentDataPath + "/Saves/" + saveName + ".crab", FileMode.Open);
 
         // Convert the file data into SaveGameData format for use in game
         SaveGameData loadData = (SaveGameData) formatter.Deserialize(saveFile);
