@@ -15,7 +15,7 @@ public class loading_handler : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        loadingOperation = SceneManager.LoadSceneAsync(1);
+        loadingOperation = SceneManager.LoadSceneAsync(2);
     }
 
     /// <summary>

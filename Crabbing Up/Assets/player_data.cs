@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class player_data : MonoBehaviour
 {
@@ -14,14 +15,12 @@ public class player_data : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
-
         GameObject.Find("save/load").GetComponent<GameLoader>().LoadFromFile();
     }
 
     public void Exit()
     {
         GameObject.Find("save/load").GetComponent<SaveGame>().SaveToFile();
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
 }
