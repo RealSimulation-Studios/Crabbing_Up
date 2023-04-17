@@ -25,6 +25,7 @@ public class game_handler : MonoBehaviour
     /// </summary>
     private void Awake()
     {   
+        PlayerPrefs.SetBool("God", false);
         ng_button.interactable = false;
         files = Directory.GetFiles(Application.persistentDataPath + "/Saves/","*.crab", SearchOption.AllDirectories);
 
@@ -46,6 +47,10 @@ public class game_handler : MonoBehaviour
     public void Load()
     {
         ToLoad = saved_games[savegame_dropdown.value];
+        if(ToLoad == "He's a Good")
+        {
+            PlayerPrefs.SetBool("God", true);
+        }
         PlayerPrefs.SetString("savegame", ToLoad);
         SceneManager.LoadScene(1);
     }
