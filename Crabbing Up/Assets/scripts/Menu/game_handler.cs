@@ -45,9 +45,14 @@ public class game_handler : MonoBehaviour
     }
 
     public void Load()
-    {
+    {   
+    
+        if(saved_games == NULL)
+        {
+            return;
+        }
         ToLoad = saved_games[savegame_dropdown.value];
-        if(ToLoad == "He's a Good")
+        if(ToLoad == "He's a God")
         {
             PlayerPrefs.SetBool("God", true);
         }
