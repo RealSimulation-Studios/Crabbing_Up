@@ -25,8 +25,14 @@ public class game_handler : MonoBehaviour
     /// </summary>
     private void Awake()
     {   
-        PlayerPrefs.SetBool("God", false);
+        PlayerPrefs.SetInt("God", 0);
         ng_button.interactable = false;
+
+        if(!Directory.Exists(Application.persistentDataPath + "/Saves"))
+        {
+            Directory.CreateDirectory(Application.persistentDataPath + "/Saves");
+        }
+
         files = Directory.GetFiles(Application.persistentDataPath + "/Saves/","*.crab", SearchOption.AllDirectories);
 
         for(int i = 0; i < files.Length; i++)
@@ -45,11 +51,16 @@ public class game_handler : MonoBehaviour
     }
 
     public void Load()
-    {
-        ToLoad = saved_games[savegame_dropdown.value];
-        if(ToLoad == "He's a Good")
+    {   
+        if(saved_games.Length < 1)
         {
-            PlayerPrefs.SetBool("God", true);
+            return;
+        }
+
+        ToLoad = saved_games[savegame_dropdown.value];
+        if(ToLoad == "He's a God")
+        {
+            PlayerPrefs.SetInt("God", 1);
         }
         PlayerPrefs.SetString("savegame", ToLoad);
         SceneManager.LoadScene(1);
