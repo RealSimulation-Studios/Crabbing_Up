@@ -5,6 +5,10 @@ using UnityEngine.AI;
 
 public class simple_ai : MonoBehaviour
 {
+    public GameObject AggroRange;
+    public GameObject Trigger;
+
+
     public NavMeshAgent agent;
 
     public Transform player;
@@ -35,6 +39,23 @@ public class simple_ai : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+
+        int god = PlayerPrefs.GetInt("God");
+
+        Trigger.transform.localScale = new Vector3(sightRange*2, 0.1f, sightRange*2);
+        AggroRange.transform.localScale = new Vector3(attackRange*2, 0.2f, attackRange*2);
+
+
+        if(god == 1)
+        {
+            Trigger.SetActive(true);
+            AggroRange.SetActive(true);
+        }
+        else
+        {
+            Trigger.SetActive(false);
+            AggroRange.SetActive(false);
+        }
     }
 
     /// <summary>

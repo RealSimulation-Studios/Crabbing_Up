@@ -61,6 +61,7 @@ public class game_handler : MonoBehaviour
         if(ToLoad == "He's a God")
         {
             PlayerPrefs.SetInt("God", 1);
+            print("Enabled God Mode");
         }
         PlayerPrefs.SetString("savegame", ToLoad);
         SceneManager.LoadScene(1);
