@@ -17,6 +17,9 @@ public class SaveGame : MonoBehaviour
         saveGameData.playerName = GameObject.Find("data").GetComponent<player_data>().Username;
         saveGameData.level = GameObject.Find("data").GetComponent<player_data>().level;
         saveGameData.health = GameObject.Find("data").GetComponent<player_data>().health;
+        saveGameData.x = GameObject.Find("data").GetComponent<player_data>().x;
+        saveGameData.y = GameObject.Find("data").GetComponent<player_data>().y;
+        saveGameData.z = GameObject.Find("data").GetComponent<player_data>().z;
 
         // The formatter will convert our unity data type into a binary file
         BinaryFormatter formatter = new BinaryFormatter();

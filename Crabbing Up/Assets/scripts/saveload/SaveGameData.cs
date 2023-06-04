@@ -9,4 +9,7 @@ public struct SaveGameData
     public string playerName;
     public float level;
     public float health;
+    public float x;
+    public float y;
+    public float z;
 }
