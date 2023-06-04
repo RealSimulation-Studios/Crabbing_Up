@@ -15,6 +15,7 @@ public class simple_ai : MonoBehaviour
     
     public LayerMask whatIsGround, whatIsPlayer;
 
+    public int maxhealth;
     public int health;
 
     //Patroling
@@ -56,6 +57,8 @@ public class simple_ai : MonoBehaviour
             Trigger.SetActive(false);
             AggroRange.SetActive(false);
         }
+
+        health = maxhealth;
     }
 
     /// <summary>
@@ -132,18 +135,6 @@ public class simple_ai : MonoBehaviour
         alreadyAttacked = false;
     }
 
-     private void TakeDamage(int damage)
-    {
-        health -= damage;
-
-        if(health <= 0 ) Invoke(nameof(DestroyEnemy), 0.5f);
-    }
-
-    private void DestroyEnemy()
-    {
-        Destroy(gameObject);
-    }
-
 
     /// <summary>
     /// Callback to draw gizmos only if the object is selected.
@@ -154,5 +145,21 @@ public class simple_ai : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+    }
+
+    public void TakeDamage(int Damage)
+    {
+        health -= Damage;
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        // Füge hier den Code hinzu, der ausgeführt werden soll, wenn der Gegner stirbt (z. B. Punkte erhöhen, Animation abspielen, Gegner entfernen usw.)
+        Destroy(gameObject);
     }
 }
