@@ -103,9 +103,9 @@ public class game_handler : MonoBehaviour
         saveGameData.playerName = "";
         saveGameData.level = 0.0f;
         saveGameData.health = 1.0f;
-        saveGameData.x = -671.0f;
-        saveGameData.y = 326.0f;
-        saveGameData.z = 474.0f;
+        saveGameData.x = 2202.0f;
+        saveGameData.y = 60.0f;
+        saveGameData.z = 1762.0f;
 
         // The formatter will convert our unity data type into a binary file
         BinaryFormatter formatter = new BinaryFormatter();
