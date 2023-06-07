@@ -100,7 +100,7 @@ public class game_handler : MonoBehaviour
         ToLoad = input.text;
         PlayerPrefs.SetString("savegame", ToLoad);
 
-        saveGameData.playerName = "";
+        saveGameData.playerName = "Test";
         saveGameData.level = 0.0f;
         saveGameData.health = 1.0f;
         saveGameData.x = 2202.0f;

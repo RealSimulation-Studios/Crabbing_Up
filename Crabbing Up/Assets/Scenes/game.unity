@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251010674befb4b4fb8d8ca047fa5bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 396268070}
   Username: 
   level: 0
   health: 0

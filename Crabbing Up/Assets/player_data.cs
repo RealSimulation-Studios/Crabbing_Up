@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class player_data : MonoBehaviour
-{
+{   
+    public GameObject player;
+
     [Header("Player Data")]
     public string Username;
     public float level;
@@ -25,13 +27,15 @@ public class player_data : MonoBehaviour
         pos.y = y;
         pos.z = z;
 
-        GameObject.Find("Player").GetComponent<Transform>().position = pos;
+        player.GetComponent<CharacterController>().enabled = false;
+        player.GetComponent<Transform>().position = pos;
+        player.GetComponent<CharacterController>().enabled = true;
     }
 
     public void Exit()
     {   
         Vector3 pos = new Vector3();
-        pos = GameObject.Find("Player").GetComponent<Transform>().position;
+        pos = player.GetComponent<Transform>().position;
         x = pos.x;
         y = pos.y;
         z = pos.z;
