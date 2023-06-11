@@ -35,12 +35,14 @@ public class Discord_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         // Log in with the Application ID
         discord = new Discord.Discord(applicationID, (System.UInt64)Discord.CreateFlags.NoRequireDiscord);
 
         time = System.DateTimeOffset.Now.ToUnixTimeMilliseconds();
 
         UpdateStatus();
+        
     }
 
     // Update is called once per frame
@@ -57,7 +59,7 @@ public class Discord_Controller : MonoBehaviour
         }
     }
 
-    void LateUpdate() 
+    void LateUpdate()
     {
         UpdateStatus();
     }
@@ -72,7 +74,7 @@ public class Discord_Controller : MonoBehaviour
             {
                 Details = details,
                 State = state,
-                Assets = 
+                Assets =
                 {
                     LargeImage = largeImage,
                     LargeText = largeText
