@@ -43,4 +43,18 @@ public class player_data : MonoBehaviour
         GameObject.Find("save/load").GetComponent<SaveGame>().SaveToFile();
         SceneManager.LoadScene(0);
     }
+
+    public void save()
+    {
+    
+       
+        Vector3 pos = new Vector3();
+        pos = player.GetComponent<Transform>().position;
+        x = pos.x;
+        y = pos.y;
+        z = pos.z;
+        
+        GameObject.Find("save/load").GetComponent<SaveGame>().SaveToFile();
+    }
+    
 }
