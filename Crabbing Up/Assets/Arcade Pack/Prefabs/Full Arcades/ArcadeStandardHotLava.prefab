@@ -679,8 +679,8 @@ GameObject:
   - component: {fileID: 4641024689479772}
   - component: {fileID: 33754995033405558}
   - component: {fileID: 23219638881661884}
-  - component: {fileID: 4155588807298912672}
   - component: {fileID: 2004872959667433745}
+  - component: {fileID: 1444694447435841143}
   m_Layer: 0
   m_Name: ArcadeStandardHotLava
   m_TagString: Untagged
@@ -768,19 +768,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4155588807298912672
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439825266138164}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.0000005, y: 4.089268, z: 2.5068245}
-  m_Center: {x: -0.0058375597, y: 2.0619395, z: 0.21266061}
 --- !u!65 &2004872959667433745
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -792,8 +779,20 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.2, y: 4.289268, z: 2.706824}
-  m_Center: {x: -0.0058375597, y: 2.0619395, z: 0.21266061}
+  m_Size: {x: 2.2, y: 4.2892675, z: 3.7092433}
+  m_Center: {x: -0.00583753, y: 2.0619395, z: 0.71386945}
+--- !u!114 &1444694447435841143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439825266138164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2dbac10c46857a4aabfc19dea3fae18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1506258636396044
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ public class simple_ai : MonoBehaviour
     //Patroling
 
     public Vector3 walkPoint;
-    bool walkPointSet;
+    public bool walkPointSet;
     public float walkPointRange;
 
     //Attaking
@@ -32,6 +32,8 @@ public class simple_ai : MonoBehaviour
     //States
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
+
+    public int regen_wp = 0;
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -66,6 +68,8 @@ public class simple_ai : MonoBehaviour
     /// </summary>
     private void Update()
     {
+
+        regen_wp += 1;
         //Check for sight and attack range
 
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
@@ -85,9 +89,16 @@ public class simple_ai : MonoBehaviour
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-        if(distanceToWalkPoint.magnitude < 1f)
-            walkPointSet = false;
 
+        if(distanceToWalkPoint.magnitude < 2f)
+            walkPointSet = false;
+            regen_wp = 0;
+        
+        
+        if(regen_wp > 2000)
+        {
+            walkPointSet = false;
+        }
 
     }
 
@@ -159,7 +170,7 @@ public class simple_ai : MonoBehaviour
 
     private void Die()
     {
-        // Füge hier den Code hinzu, der ausgeführt werden soll, wenn der Gegner stirbt (z. B. Punkte erhöhen, Animation abspielen, Gegner entfernen usw.)
+
         Destroy(gameObject);
     }
 }
