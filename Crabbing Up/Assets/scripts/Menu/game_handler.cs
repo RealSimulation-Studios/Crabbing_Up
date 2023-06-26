@@ -24,7 +24,7 @@ public class game_handler : MonoBehaviour
     /// Awake is called when the script instance is being loaded.
     /// </summary>
     private void Awake()
-    {   
+    {
         PlayerPrefs.SetInt("God", 0);
         ng_button.interactable = false;
 
@@ -36,7 +36,7 @@ public class game_handler : MonoBehaviour
         files = Directory.GetFiles(Application.persistentDataPath + "/Saves/","*.crab", SearchOption.AllDirectories);
 
         for(int i = 0; i < files.Length; i++)
-        {   
+        {
             string curr = files[i];
             string game = curr[(curr.IndexOf("Saves/") + 6)..(curr.Length - 5)];
             games.Add(game);
@@ -51,7 +51,7 @@ public class game_handler : MonoBehaviour
     }
 
     public void Load()
-    {   
+    {
         if(saved_games.Length < 1)
         {
             return;
@@ -113,12 +113,12 @@ public class game_handler : MonoBehaviour
         // Choose the save location
         FileStream saveFile = File.Create(Application.persistentDataPath + "/Saves/" + ToLoad + ".crab");
 
-        
+
         formatter.Serialize(saveFile, saveGameData);
 
         saveFile.Close();
 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(5);
     }
 
     public void Exit()

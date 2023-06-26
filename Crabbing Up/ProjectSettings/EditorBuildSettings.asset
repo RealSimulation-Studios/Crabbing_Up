@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gamemachine.unity
     guid: dc2d337b760b3ff49991ac536ca803b9
+  - enabled: 1
+    path: Assets/Scenes/intro.unity
+    guid: ee988243936d9fb43bea30813ba64fcf
   m_configObjects: {}
