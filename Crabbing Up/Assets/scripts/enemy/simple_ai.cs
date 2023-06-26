@@ -92,13 +92,16 @@ public class simple_ai : MonoBehaviour
 
         if(distanceToWalkPoint.magnitude < 2f)
             walkPointSet = false;
-            regen_wp = 0;
         
-        
-        if(regen_wp > 2000)
+
+        if(regen_wp > 200000)
         {
+            regen_wp = 0;
             walkPointSet = false;
         }
+            
+        
+    
 
     }
 
@@ -111,6 +114,7 @@ public class simple_ai : MonoBehaviour
 
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
             walkPointSet = true;
+            regen_wp = 0;
     }
 
     private void ChasePlayer()
