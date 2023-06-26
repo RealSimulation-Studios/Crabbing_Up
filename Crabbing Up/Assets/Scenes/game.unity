@@ -1111,6 +1111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7.5
+  s_speed: 7.5
+  sprint: 15.5
   jumpSpeed: 8
   gravity: 20
   playerCamera: {fileID: 303725369}

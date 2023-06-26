@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Character_Controller : MonoBehaviour
 {
-public float speed = 7.5f;
+    public float speed = 7.5f;
+    public float s_speed = 7.5f;
+    public float sprint = 10.5f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
     public Camera playerCamera;
@@ -25,7 +27,16 @@ public float speed = 7.5f;
     }
 
     void Update()
-    {
+    {   
+        if(Input.GetButton("Sprint"))
+        {
+            speed = sprint;
+        }
+        else
+        {
+            speed = s_speed;
+        }
+
         if (characterController.isGrounded)
         {
             // We are grounded, so recalculate move direction based on axes
