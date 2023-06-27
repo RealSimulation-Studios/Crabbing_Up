@@ -14,5 +14,10 @@ public class Attack : MonoBehaviour
             // Rufe die Methode TakeDamage() auf dem Gegner auf, um Schaden zuzufügen
             other.GetComponent<simple_ai>().TakeDamage(damageAmount);
         }
+
+        if(other.CompareTag("Boss"))
+        {
+            other.GetComponent<crs_movement>().TakeDamage(damageAmount);
+        }
     }
 }
