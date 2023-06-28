@@ -35,12 +35,15 @@ public class speicherpunkt : MonoBehaviour
     /// </summary>
     /// <param name="other">The other Collider involved in this collision.</param>
     private void OnTriggerEnter(Collider other)
-    {
+    {   
+                if(other.tag == "Player")
+        {
         deactivationGroup.SetActive(false);
         activationGroup.SetActive(true);
 
         GameObject.Find("data").GetComponent<player_data>().save();
         print("done");
+        }
     }
 
 

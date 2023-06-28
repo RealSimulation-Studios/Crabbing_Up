@@ -34,7 +34,6 @@ public class projectile : MonoBehaviour
     /// </summary>
     private void OnTriggerEnter(Collider other)
     {
-        print(other.tag);
         if(other.tag == "Player")
         {
             GameObject.Find("data").GetComponent<player_data>().health = GameObject.Find("data").GetComponent<player_data>().health - 0.1f;

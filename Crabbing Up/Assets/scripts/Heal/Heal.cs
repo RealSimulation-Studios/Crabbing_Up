@@ -12,9 +12,12 @@ public class Heal : MonoBehaviour
     /// </summary>
     /// <param name="other">The other Collider involved in this collision.</param>
     private void OnTriggerEnter(Collider other)
-    {
+    {   
+                if(other.tag == "Player")
+        {
         GameObject.Find("data").GetComponent<player_data>().health = 1.0f;
         GetComponent<AudioSource>().Play();
         Destroy(gameObject, 1.0f);
+        }
     }
 }

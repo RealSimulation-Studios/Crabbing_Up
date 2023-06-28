@@ -11,12 +11,14 @@ public class Endfight_start : MonoBehaviour
 /// </summary>
 /// <param name="other">The other Collider involved in this collision.</param>
 private void OnTriggerEnter(Collider other)
-{   
+{           if(other.tag == "Player")
+        {
     if(state)
     {
         caris.SetActive(true);
         state = false;
     }
+        }
     
 }
 }
