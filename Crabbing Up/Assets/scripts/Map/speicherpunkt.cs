@@ -40,8 +40,13 @@ public class speicherpunkt : MonoBehaviour
         {
         deactivationGroup.SetActive(false);
         activationGroup.SetActive(true);
+        
+        float h = GameObject.Find("data").GetComponent<player_data>().health;
+        GameObject.Find("data").GetComponent<player_data>().health = 1.0f;
 
         GameObject.Find("data").GetComponent<player_data>().save();
+        
+        GameObject.Find("data").GetComponent<player_data>().health = h;
         print("done");
         }
     }

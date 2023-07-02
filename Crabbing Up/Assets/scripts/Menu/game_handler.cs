@@ -20,6 +20,16 @@ public class game_handler : MonoBehaviour
 
     private SaveGameData saveGameData;
 
+
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
